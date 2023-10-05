@@ -1,0 +1,44 @@
+## Commandes de Navigation
+- `pwd` : Afficher le répertoire de travail actuel.
+- `ls` : Lister les fichiers et répertoires du répertoire courant.
+- `cd` : Changer de répertoire.
+   - `cd chemin/vers/dossier` : Naviguer vers un dossier spécifique.
+   - `cd ..` : Remonter d'un niveau.
+   - `cd ~` : Aller dans le répertoire de l'utilisateur.
+- `mkdir` : Créer un nouveau répertoire.
+   - `mkdir nom_du_dossier` : Créer un dossier avec un nom spécifié.
+- `rmdir` : Supprimer un répertoire vide.
+   - `rmdir nom_du_dossier` : Supprimer un dossier vide.
+
+## Commandes de Gestion de Fichiers
+- `touch` : Créer un nouveau fichier vide.
+   - `touch nom_du_fichier` : Créer un fichier avec un nom spécifié.
+- `cp` : Copier des fichiers ou des répertoires.
+   - `cp fichier_source fichier_destination` : Copier un fichier.
+   - `cp -r dossier_source dossier_destination` : Copier un répertoire récursivement.
+- `mv` : Déplacer ou renommer des fichiers ou des répertoires.
+   - `mv fichier_source fichier_destination` : Déplacer ou renommer un fichier.
+- `rm` : Supprimer des fichiers ou des répertoires.
+   - `rm fichier` : Supprimer un fichier.
+   - `rm -r dossier` : Supprimer un répertoire récursivement.
+
+## Commandes de Recherche
+- `grep` : Rechercher du texte dans des fichiers.
+   - `grep motif fichier` : Rechercher un motif dans un fichier.
+- `find` : Rechercher des fichiers et des répertoires.
+   - `find chemin -name "nom_de_fichier"` : Rechercher un fichier par nom.
+- `locate` : Rechercher rapidement des fichiers dans une base de données.
+   - `locate nom_de_fichier` : Rechercher un fichier par nom.
+
+## Commandes d'Affichage de Contenu
+- `cat` : Afficher le contenu d'un fichier.
+   - `cat nom_du_fichier` : Afficher le contenu d'un fichier.
+- `less` : Afficher le contenu d'un fichier de manière paginée.
+   - `less nom_du_fichier` : Afficher le contenu d'un fichier en mode lecture.
+   - Appuyez sur la touche "q" pour quitter.
+
+## Commandes de Gestion des Utilisateurs
+- `who` : Afficher la liste des utilisateurs connectés.
+- `passwd` : Changer le mot de passe de l'utilisateur actuel.
+- `useradd` : Ajouter un nouvel utilisateur.
+- `userdel` : Supprimer un utilisateur.
