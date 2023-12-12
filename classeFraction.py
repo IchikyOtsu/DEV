@@ -38,17 +38,9 @@ class Fraction:
     def numerator(self):
         return self.__num
 
-    @numerator.setter
-    def numerator(self, other):
-        self.__num = other
-
     @property
     def denominator(self):
         return self.__den
-
-    @denominator.setter
-    def denominator(self, other):
-        self.__den = other
 
     @property
     def fraction(self):
