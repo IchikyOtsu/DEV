@@ -10,11 +10,9 @@ class Fraction:
     def __init__(self, num: int = 0, den: int = 1):
         """This builds a fraction based on some numerator and denominator.
 
-        PRE : num is an integer
-        POST : A new fraction is constructed with values equivalent to num/den.
+        PRE : num is an integer 
+        POST : If den is not zero, a new fraction is constructed with values equivalent to num/den.
 
-        Raises:
-            ZeroDivisionError: If the denominator is zero.
         """
         self.__num = num
         self.__den = den
@@ -77,11 +75,8 @@ class Fraction:
     def __add__(self, other):
         """Overloading of the + operator for fractions
 
-        PRE : other
+        PRE : other is an instance of class Fraction
         POST : self and other are unchanged, return a new object from class Fraction, value is the sum of self and other
-
-        Raises:
-            TypeError: If 'other' is not an instance of class Fraction.
         """
         
         if isinstance(other, Fraction):
@@ -98,11 +93,8 @@ class Fraction:
     def __sub__(self, other):
         """Overloading of the - operator for fractions
 
-        PRE : other
+        PRE : other is an instance of class Fraction
         POST : self and other are unchanged, return a new object from class Fraction, value is the difference of self and other
-        Raises:
-            TypeError: If 'other' is not an instance of class Fraction.
-
         """
     
         if isinstance(other, Fraction):
@@ -120,10 +112,8 @@ class Fraction:
     def __mul__(self, other):
         """Overloading of the * operator for fractions
 
-        PRE : other 
+        PRE : other is an instance of class Fraction
         POST : self and other are unchanged, return a new object from class Fraction, value is the product of self and other
-        Raises:
-            TypeError: If 'other' is not an instance of class Fraction.
         """
        
         if isinstance(other, Fraction):
@@ -134,11 +124,8 @@ class Fraction:
     def __truediv__(self, other):
         """Overloading of the / operator for fractions
 
-        PRE : other
+        PRE : other is an instance of class Fraction
         POST : self and other are unchanged, return a new object from class Fraction, value is the division of self by other
-        Raises:
-            TypeError: If 'other' is not an instance of class Fraction.
-            ZeroDivisionError: If 'other' is zero.
         """
         
         if isinstance(other, Fraction):
@@ -152,10 +139,8 @@ class Fraction:
     def __pow__(self, other):
         """Overloading of the ** operator for fractions
 
-        PRE : other 
+        PRE : other is an int
         POST : self and other are unchanged, return a new object from class Fraction, value is self raised to the power of other
-        Raises:
-            TypeError: If 'other' is not a 'int'
         """
         if isinstance(other, int):
             return Fraction(self.numerator ** other, self.denominator ** other)
@@ -165,10 +150,8 @@ class Fraction:
     def __eq__(self, other):
         """Overloading of the == operator for fractions
 
-        PRE : other 
+        PRE : other is an instance of class Fraction
         POST : Returns True if self and other are equal fractions, returns False otherwise
-        Raises:
-            TypeError: If 'other' is not an instance of class Fraction.
         """
       
         if isinstance(other, Fraction):
@@ -192,10 +175,8 @@ class Fraction:
     def __lt__(self, other):
         """Overloading of the < operator for fractions
 
-        PRE : other
+        PRE : other is an instance of class Fraction
         POST : Returns True if self is less than other, False otherwise
-        Raises:
-            TypeError: If 'other' is not an instance of class Fraction.
         """
 
         if isinstance(other, Fraction):
@@ -213,10 +194,8 @@ class Fraction:
     def __gt__(self, other):
         """Overloading of the > operator for fractions
 
-        PRE : other 
+        PRE : other is an instance of class Fraction
         POST : Returns True if self is greater than other, False otherwise
-        Raises:
-            TypeError: If 'other' is not an instance of class Fraction.
         """
 
         if isinstance(other, Fraction):
@@ -234,10 +213,8 @@ class Fraction:
     def __ne__(self, other):
         """Overloading of the != operator for fractions
 
-        PRE : other 
+        PRE : other is an instance of class Fraction
         POST : Returns True if self is not equal to other, False otherwise
-        Raises:
-            TypeError: If 'other' is not an instance of class Fraction.
         """
 
         if isinstance(other, Fraction):
@@ -255,10 +232,8 @@ class Fraction:
     def __le__(self, other):
         """Overloading of the <= operator for fractions
 
-        PRE : other
+        PRE : other is an instance of class Fraction
         POST : Returns True if self is less than or equal to other, False otherwise
-        Raises:
-            TypeError: If 'other' is not an instance of class Fraction.
         """
 
         if isinstance(other, Fraction):
@@ -277,10 +252,8 @@ class Fraction:
     def __ge__(self, other):
         """Overloading of the >= operator for fractions
 
-        PRE : other 
+        PRE : other is an instance of class Fraction
         POST : Returns True if self is greater than or equal to other, False otherwise
-        Raises:
-            TypeError: If 'other' is not an instance of class Fraction.
         """
 
         if isinstance(other, Fraction):
@@ -355,7 +328,8 @@ class Fraction:
         """
         try:
             if isinstance(other, Fraction):
-                return abs(int(str(self.__sub__(other))))==1
+                diff = self.__sub__(other)
+                return abs(diff.numerator)==1 and abs(diff.denominator) > 0
             else:
                 raise TypeError("Other must be an instance of class Fraction")
         except Exception as e:
@@ -363,4 +337,19 @@ class Fraction:
             return False  
 
 
+# def is_adjacent_to(self, other):
+#     """Check if two fractions differ by a unit fraction
+
+#     Two fractions are adjacent if the absolute value of the difference between them is a unit fraction
+
+#     PRE : other is an instance of class Fraction
+#     POST : Returns True if the difference between self and other is a unit fraction, returns False otherwise
+#     """
+#     if not isinstance(other, Fraction):
+#         raise TypeError("Other must be an instance of class Fraction")
+
+#     diff = Fraction(self.numerator * other.denominator - other.numerator * self.denominator,
+#                     self.denominator * other.denominator)
+
+#     return abs(diff.numerator) == 1 and diff.denominator != 0
 
